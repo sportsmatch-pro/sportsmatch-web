@@ -1,6 +1,3 @@
-# sportsmatch-web
-Web estàtica de SportsMatch
-
 # SportsMatch Web
 
 Aplicación web para conectar deportistas y gestionar partidos, creada con **React**, **Vite** y **Tailwind CSS**.
