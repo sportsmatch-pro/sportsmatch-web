@@ -1,22 +1,23 @@
-import { useState } from "react";
-import futbol from "./assets/futbol.png"; 
-//import basket from "./assets/basket.jpg";
-//import hockey from "./assets/hockey.jpg";
-//import futbolSala from "./assets/futbolsala.jpg";
-//import voleibol from "./assets/voleibol.jpg";
+import { useState, useEffect } from "react";
+import futbol from "./assets/futbol.png";
+import basket from "./assets/basket.png";
+import hockey from "./assets/hockey.webp";
+import futbolSala from "./assets/futsal.png";
+import voleibol from "./assets/voliebol.png";
 import balonmano from "./assets/balonmano.png";
 
 const deportes = [
   { nombre: "Fútbol", color: "border-green-500", imagen: futbol },
-  // { nombre: "Baloncesto", color: "border-orange-500", imagen: basket },
-  // { nombre: "Hockey", color: "border-yellow-500", imagen: hockey },
-  // { nombre: "Fútbol sala", color: "border-blue-500", imagen: futbolSala },
-  // { nombre: "Voleibol", color: "border-pink-500", imagen: voleibol },
+  { nombre: "Baloncesto", color: "border-orange-500", imagen: basket },
+  { nombre: "Hockey", color: "border-yellow-500", imagen: hockey },
+  { nombre: "Fútbol sala", color: "border-blue-500", imagen: futbolSala },
+  { nombre: "Voleibol", color: "border-pink-500", imagen: voleibol },
   { nombre: "Balonmano", color: "border-purple-600", imagen: balonmano },
 ];
 
 export default function DeportesSlider() {
   const [index, setIndex] = useState(0);
+  const [scale, setScale] = useState(0.8);
 
   const siguiente = () => {
     setIndex((prev) => (prev + 1) % deportes.length);
@@ -26,29 +27,51 @@ export default function DeportesSlider() {
     setIndex((prev) => (prev - 1 + deportes.length) % deportes.length);
   };
 
+  useEffect(() => {
+    const interval = setInterval(siguiente, 5000);
+    return () => clearInterval(interval);
+  }, []);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const maxScroll = 500; // px for full effect
+      const scrollY = window.scrollY;
+      const newScale = Math.min(1, 0.8 + (scrollY / maxScroll) * 0.2);
+      setScale(newScale);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   const actual = deportes[index];
 
   return (
-    <div className="h-screen w-full bg-white flex flex-col justify-center items-center">
-      <div className="flex justify-center items-center space-x-4">
-        <button onClick={anterior} className="text-4xl font-bold">&lt;</button>
-        
-        {actual.imagen && (
-          <div className={`border-4 ${actual.color} p-4 transform rotate-45`}>
-            <img
-              src={actual.imagen}
-              alt={actual.nombre}
-              className="w-80 h-80 object-cover transform -rotate-45"
-            />
-          </div>
-        )}
+    <div className="relative h-screen w-full overflow-hidden flex items-center justify-center bg-black">
+      {actual.imagen && (
+        <img
+          src={actual.imagen}
+          alt={actual.nombre}
+          style={{
+            transform: `scale(${scale})`,
+            transition: "transform 0.1s ease-out",
+          }}
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+      )}
 
-        <button onClick={siguiente} className="text-4xl font-bold">&gt;</button>
-      </div>
-
-      <p className="mt-6 text-3xl font-semibold">{actual.nombre}</p>
-
-       
+      {/* Arrows on sides */}
+      <button
+        onClick={anterior}
+        className="absolute left-8 text-5xl text-white z-20"
+      >
+        &lt;
+      </button>
+      <button
+        onClick={siguiente}
+        className="absolute right-8 text-5xl text-white z-20"
+      >
+        &gt;
+      </button>
     </div>
   );
 }

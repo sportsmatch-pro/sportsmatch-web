@@ -31,14 +31,6 @@ function App() {
           background: "black",
           textColor: "white",
         },
-        {
-          title: "Mejora tus habilidades",
-          text: "Accede a recursos y herramientas que te ayudarán a alcanzar tus objetivos.",
-          image: "./assets/futbol.png",
-          imagePosition: "right",
-          background: "white",
-          textColor: "black",
-        },
         
       ].map((section, index) => (
         <Section1
