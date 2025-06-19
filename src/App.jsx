@@ -45,6 +45,7 @@ function App() {
           </div>
         ))}
       </main>
+      <Section2 />
       <Footer />
     </>
   );
