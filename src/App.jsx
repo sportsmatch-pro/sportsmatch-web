@@ -44,8 +44,13 @@ function App() {
             />
           </div>
         ))}
+        <div className="relative w-full h-screen snap-start">
+          <Section2 />
+        </div>
       </main>
-      <Section2 />
+      <div className="w-full h-screen bg-[#0e1628] flex items-center justify-center px-4">
+        <Section3 />
+      </div>
       <Footer />
     </>
   );

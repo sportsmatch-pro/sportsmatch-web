@@ -4,6 +4,7 @@ import hockey from "./assets/hockeysection2.png";
 import futsal from "./assets/futbolsalasection2.png";
 import volei from "./assets/voleibolsection2.png";
 import balonmano from "./assets/balonmanosection2.png";
+
 function Section2() {
   const deportes = [
     { nombre: "Fútbol", color: "border-green-500", imagen: futbol },
@@ -15,7 +16,7 @@ function Section2() {
   ];
 
   return (
-    <section className="w-screen h-screen snap-start flex flex-col items-center justify-start bg-white">
+    <section className="snap-center snap-mandatory w-screen min-h-screen flex flex-col items-center justify-center bg-white">
       <h2 className="text-8xl font-bold mb-32 mt-0">¿Cuál es tu deporte?</h2>
       <p className="mb-32 mt-32 text-2xl">
         <span className="font-bold">SPORTSMATCH</span> te permite registrar en alguno de estos 6 deportes.
