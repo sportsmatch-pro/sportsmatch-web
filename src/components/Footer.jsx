@@ -2,7 +2,7 @@ import logoFooter from '../assets/logofooter.png';
 
 const Footer = () => {
   return (
-    <footer className="bg-[#2e2e2e] text-white py-12 px-4 mt-16">
+    <footer className="bg-[#2e2e2e] text-white py-12 px-4 mt-0">
       <div className="max-w-5xl mx-auto text-center">
       <h2 className="text-4xl font-bold mb-4">Contáctanos</h2>
       <p className="text-lg mb-6">
