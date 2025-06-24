@@ -6,6 +6,7 @@ import Section1 from './../components/Section1';
 import Section2 from './../components/Section2';
 import Footer from './../components/Footer';
 import SectionContactForm from '../components/SectionContactForm';
+import Section4 from '../components/Section4';
 
 export default function Home() {
   const { t } = useTranslation();
@@ -67,6 +68,8 @@ export default function Home() {
       <div className="w-full bg-[#0e1628] flex items-center justify-center px-4">
         <SectionContactForm />
       </div>
+      
+        <Section4 />
       <Footer />
     </>
   );
