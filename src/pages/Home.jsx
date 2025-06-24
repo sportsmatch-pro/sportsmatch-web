@@ -64,7 +64,7 @@ export default function Home() {
           <Section2 />
         </div>
       </main>
-      <div className="w-full h-screen bg-[#0e1628] flex items-center justify-center px-4">
+      <div className="w-full bg-[#0e1628] flex items-center justify-center px-4">
         <SectionContactForm />
       </div>
       <Footer />
