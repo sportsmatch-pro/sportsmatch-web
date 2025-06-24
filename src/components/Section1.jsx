@@ -1,17 +1,8 @@
 import { useState } from "react";
-
-function Section1({ title, text, imagePosition, background, textColor }) {
+// TODO: Canviar el nom del component per un que sigui més descriptiu
+function Section1({ title, text, imagePosition, background, textColor, images }) {
+  
   const [current, setCurrent] = useState(0);
-  const images = [
-    "futbol1.png",
-    "basket1.png",
-    "hockey1.png",
-    "futsal1.png",
-    "volei1.png",
-    "balonmano1.png"
-  ];
-
-  const imgSrc = new URL(`./assets/${images[current]}`, import.meta.url).href;
 
   const prev = () => setCurrent((current - 1 + images.length) % images.length);
   const next = () => setCurrent((current + 1) % images.length);
@@ -28,7 +19,7 @@ function Section1({ title, text, imagePosition, background, textColor }) {
           <p className={`text-3xl ${textClass}`}>{text}</p>
         </div>
         <div className="w-1/2 h-full relative overflow-hidden">
-          <img src={imgSrc} alt="carousel" className="w-full h-full object-cover" />
+          <img src={new URL(images[current], import.meta.url).href} alt="carousel" className="w-full h-full object-cover" />
           <button onClick={prev} className="absolute top-1/2 left-2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2">&lt;</button>
           <button onClick={next} className="absolute top-1/2 right-2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2">&gt;</button>
         </div>

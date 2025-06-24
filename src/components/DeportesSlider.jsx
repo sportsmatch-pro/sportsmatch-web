@@ -1,18 +1,12 @@
 import { useState, useEffect } from "react";
-import futbol from "./assets/futbol.png";
-import basket from "./assets/basket.png";
-import hockey from "./assets/hockey.webp";
-import futbolSala from "./assets/futsal.png";
-import voleibol from "./assets/voliebol.png";
-import balonmano from "./assets/balonmano.png";
 
 const deportes = [
-  { nombre: "Fútbol", color: "border-green-500", imagen: futbol },
-  { nombre: "Baloncesto", color: "border-orange-500", imagen: basket },
-  { nombre: "Hockey", color: "border-yellow-500", imagen: hockey },
-  { nombre: "Fútbol sala", color: "border-blue-500", imagen: futbolSala },
-  { nombre: "Voleibol", color: "border-pink-500", imagen: voleibol },
-  { nombre: "Balonmano", color: "border-purple-600", imagen: balonmano },
+  { nombre: "Fútbol", color: "border-green-500", imagen: "./../assets/futbol.png" },
+  { nombre: "Baloncesto", color: "border-orange-500", imagen: "./../assets/basket.png" },
+  { nombre: "Hockey", color: "border-yellow-500", imagen: "./../assets/hockey.webp" },
+  { nombre: "Fútbol sala", color: "border-blue-500", imagen: "./../assets/futsal.png" },
+  { nombre: "Voleibol", color: "border-pink-500", imagen: "./../assets/voliebol.png" },
+  { nombre: "Balonmano", color: "border-purple-600", imagen: "./../assets/balonmano.png" },
 ];
 
 export default function DeportesSlider() {
@@ -49,7 +43,7 @@ export default function DeportesSlider() {
     <div className="relative h-screen w-full overflow-hidden flex items-center justify-center bg-black">
       {actual.imagen && (
         <img
-          src={actual.imagen}
+          src={new URL(actual.imagen, import.meta.url).href}
           alt={actual.nombre}
           style={{
             transform: `scale(${scale})`,
