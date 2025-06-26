@@ -1,5 +1,7 @@
 import { useState } from "react";
-// TODO: Canviar el nom del component per un que sigui més descriptiu
+import BaseTextBlock from "./base/BaseTextBlock";
+import BaseCarouselButton from "./base/BaseCarouselButton";
+
 function Section1({ title, text, imagePosition, background, textColor, images }) {
   
   const [current, setCurrent] = useState(0);
@@ -15,13 +17,12 @@ function Section1({ title, text, imagePosition, background, textColor, images })
     <section className={`${bgClass} w-screen h-screen flex items-center justify-center`}>
       <div className={`flex ${flexDirection} w-full h-full`}>
         <div className="w-1/2 h-full p-8 flex flex-col justify-center">
-          <h2 className={`text-7xl font-bold mb-4 ${textClass}`}>{title}</h2>
-          <p className={`text-3xl ${textClass}`}>{text}</p>
+          <BaseTextBlock title={title} text={text} textColor={textClass} />
         </div>
         <div className="w-1/2 h-full relative overflow-hidden">
           <img src={new URL(images[current], import.meta.url).href} alt="carousel" className="w-full h-full object-cover" />
-          <button onClick={prev} className="absolute top-1/2 left-2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2">&lt;</button>
-          <button onClick={next} className="absolute top-1/2 right-2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2">&gt;</button>
+          <BaseCarouselButton direction="left" onClick={prev} />
+          <BaseCarouselButton direction="right" onClick={next} />
         </div>
       </div>
     </section>
