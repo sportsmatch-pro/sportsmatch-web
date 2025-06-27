@@ -2,20 +2,24 @@ import './../index.css';
 import { useTranslation } from 'react-i18next';
 import Navbar from './../components/Navbar';
 import DeportesSlider from './../components/DeportesSlider';
-import Section1 from './../components/Section1';
-import Section2 from './../components/Section2';
+import DeportesSelector from './../components/DeportesSelector';
+import TalentIntroSection from './../components/TalentIntroSection';
 import Footer from './../components/Footer';
 import SectionContactForm from '../components/SectionContactForm';
-import Section4 from '../components/Section4';
+import DownloadAppSection from '../components/DownloadAppSection';
 
 export default function Home() {
   const { t } = useTranslation();
 
   const sections = [
     {
-      title: t('Your dream within reach'),
-      text: t(
-        'Whether you are an athlete looking to go further or a scout searching for talent, SportsMatch makes it easy for you.'
+      title: t('Your dream, within reach'),
+      text: (
+        <>
+          {t('Do you believe you have potential and dream of taking the leap to the next level?')}
+          <br />
+          {t('Create your profile and start showcasing your talent by uploading videos and photos of your skills. Browse club offers, sign up for them, and make a Match with your next club!')}
+        </>
       ),
       images: [
         "./../assets/futsal1.png",
@@ -49,7 +53,7 @@ export default function Home() {
       <main className="relative w-full overflow-y-scroll h-screen snap-y snap-mandatory">
         {sections.map((section, index) => (
           <div key={index} className="relative w-full h-screen snap-start">
-            <Section1
+            <TalentIntroSection
               title={section.title}
               text={section.text}
               images={section.images}
@@ -61,15 +65,12 @@ export default function Home() {
             />
           </div>
         ))}
-        <div className="relative w-full h-screen snap-start">
-          <Section2 />
+        <div className="w-full bg-[#0e1628] flex items-center justify-center px-4">
+          <DeportesSelector />
         </div>
       </main>
-      <div className="w-full bg-[#0e1628] flex items-center justify-center px-4">
-        <SectionContactForm />
-      </div>
-      
-        <Section4 />
+      <SectionContactForm />
+      <DownloadAppSection />
       <Footer />
     </>
   );

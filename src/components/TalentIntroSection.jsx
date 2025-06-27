@@ -1,9 +1,11 @@
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 import BaseTextBlock from "./base/BaseTextBlock";
 import BaseCarouselButton from "./base/BaseCarouselButton";
 
 function Section1({ title, text, imagePosition, background, textColor, images }) {
   
+  const { t } = useTranslation();
   const [current, setCurrent] = useState(0);
 
   const prev = () => setCurrent((current - 1 + images.length) % images.length);
@@ -17,7 +19,7 @@ function Section1({ title, text, imagePosition, background, textColor, images })
     <section className={`${bgClass} w-screen h-screen flex items-center justify-center`}>
       <div className={`flex ${flexDirection} w-full h-full`}>
         <div className="w-1/2 h-full p-8 flex flex-col justify-center">
-          <BaseTextBlock title={title} text={text} textColor={textClass} />
+          <BaseTextBlock title={t(title)} text={t(text)} textColor={textClass} />
         </div>
         <div className="w-1/2 h-full relative overflow-hidden">
           <img src={new URL(images[current], import.meta.url).href} alt="carousel" className="w-full h-full object-cover" />

@@ -1,5 +1,8 @@
+import { useTranslation } from "react-i18next";
+
 // TODO: Canviar el nom del component per un que sigui més descriptiu
 function Section2() {
+  const { t } = useTranslation();
 
   const deportes = [
     { nombre: "Fútbol", color: "border-green-500", imagen: "./../assets/futbolsection2.png" },
@@ -12,10 +15,12 @@ function Section2() {
 
   return (
     <section className="snap-center snap-mandatory w-screen min-h-screen flex flex-col items-center justify-center bg-white">
-      <h2 className="text-8xl font-bold mb-32 mt-0">¿Cuál es tu deporte?</h2>
-      <p className="mb-32 mt-32 text-2xl">
-        <span className="font-bold">SPORTSMATCH</span> te permite registrar en alguno de estos 6 deportes.
-      </p>
+      <h2 className="text-8xl font-bold mb-32 mt-0">{t("Which is your sport?")}</h2>
+      <span className="mb-32 mt-32 text-2xl">
+        <span className="text-2xl font-normal">
+          {t("SPORTSMATCH allows you to register in one of these 6 sports.", { strong: (chunks) => <span className='font-bold'>{chunks}</span> })}
+        </span>
+      </span>
       <div className="flex flex-wrap justify-center gap-8">
         {deportes.map((deporte) => (
           <div key={deporte.nombre} className="flex flex-col items-center">
@@ -31,7 +36,7 @@ function Section2() {
         ))}
       </div>
       <p className="mt-32 text-5xl font-bold">
-        ¡Descárgate ya la app y persigue tu primer Match!
+        {t("Download the app and start your journey.")}
       </p>
     </section>
   );
