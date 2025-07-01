@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import Navbar from './../components/Navbar';
 import DeportesSlider from './../components/DeportesSlider';
 import DeportesSelector from './../components/DeportesSelector';
-import TalentIntroSection from './../components/TalentIntroSection';
+import TalentIntroSection from './../components/TalentIntroSection.jsx';
 import Footer from './../components/Footer';
 import SectionContactForm from '../components/SectionContactForm';
 import DownloadAppSection from '../components/DownloadAppSection';
@@ -18,7 +18,9 @@ export default function Home() {
         <>
           {t('Do you believe you have potential and dream of taking the leap to the next level?')}
           <br />
-          {t('Create your profile and start showcasing your talent by uploading videos and photos of your skills. Browse club offers, sign up for them, and make a Match with your next club!')}
+          {t('Create your profile and start showcasing your talent by uploading videos and photos of your skills.')}
+          <br />
+          {t('Browse club offers, sign up for them, and make a Match with your next club!')}
         </>
       ),
       images: [
@@ -31,9 +33,13 @@ export default function Home() {
       textColor: 'black',
     },
     {
-      title: t('Find your team'),
-      text: t(
-        'Join a community of athletes and scouts who share your goals and interests.'
+      title: t('Find your next star'),
+      text: (
+        <>
+          {t('If you are a club, a representative or a scouting company, you have the opportunity to')} <strong>{t('search, filter and find your next player')}</strong> {t('or the professional you need.') }
+          <br />
+          {t('Browse, chat, post a sports offer and Match with your next star!')}
+        </>
       ),
       images: [
         "./../assets/futbol1.png",
