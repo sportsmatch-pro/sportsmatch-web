@@ -4,13 +4,13 @@ import { FaApple, FaGooglePlay, FaInstagram, FaTiktok, FaFacebookF, FaLinkedinIn
 export default function Section4() {
   return (
     <div
-        className="w-full bg-cover bg-center"
+        className="w-full bg-cover bg-center relative"
         style={{ backgroundImage: `url(${section4Bg})` }}
       >
     <section className="relative w-full h-screen flex items-center justify-center text-white overflow-hidden mb-0">
       <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat blur-sm bg-black/70"
-        style={{ backgroundImage: "url('./assets/section4-bg.jpg')" }}
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat filter blur-lg brightness-75"
+        style={{ backgroundImage: `url(${section4Bg})` }}
       ></div>
 
       <div className="relative z-10 text-center">
