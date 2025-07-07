@@ -17,10 +17,10 @@ function Section1(props) {
   return (
     <section className={`${bgClass} w-screen h-screen flex items-center justify-center`}>
       <div className={`flex ${flexDirection} w-full h-full`}>
-        <div className="w-1/2 h-full p-8 flex flex-col justify-center">
+        <div className="w-1/2 h-full p-8 flex flex-col justify-start">
           <div className={`${textClass} ${props.title === "your dream, within reach" ? "text-center" : ""}`}>
             <h2 className={`text-6xl font-bold mb-12 ${props.title === "your dream, within reach" ? "text-center" : ""}`}>{props.title}</h2>
-            <p className={`text-3xl ${props.title === "your dream, within reach" ? "text-center" : "text-left"}`}>{props.text}</p>
+            <p className={`text-3xl mt-4 ${props.title === "your dream, within reach" ? "text-center" : "text-left"}`}>{props.text}</p>
           </div>
         </div>
         <div className="w-1/2 h-full relative overflow-hidden">
