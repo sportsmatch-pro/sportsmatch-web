@@ -7,7 +7,7 @@ export default function DownloadAppSection() {
       className="w-full bg-cover bg-center relative"
       style={{ backgroundImage: `url(${section4Bg})` }}
     >
-      <section className="relative w-full h-screen flex items-center justify-center text-white overflow-hidden mb-0">
+      <section className="relative w-full min-h-[70vh] md:h-screen flex flex-col items-center justify-center text-white overflow-hidden mb-0 px-4 md:px-0">
         {/* Fondo desenfocado */}
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat filter blur-lg brightness-75"
@@ -15,18 +15,18 @@ export default function DownloadAppSection() {
           aria-hidden="true"
         />
         {/* Contenido principal */}
-        <div className="relative z-10 text-center">
-          <h2 className="text-5xl font-bold mb-6">Ya disponible en:</h2>
-          <div className="flex justify-center space-x-12 mb-6">
-            <FaApple className="text-7xl" aria-label="App Store" />
-            <FaGooglePlay className="text-7xl" aria-label="Google Play" />
+        <div className="relative z-10 text-center max-w-4xl">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 md:mb-6">Ya disponible en:</h2>
+          <div className="flex justify-center space-x-6 sm:space-x-8 md:space-x-12 mb-6">
+            <FaApple className="text-4xl sm:text-5xl md:text-7xl" aria-label="App Store" />
+            <FaGooglePlay className="text-4xl sm:text-5xl md:text-7xl" aria-label="Google Play" />
           </div>
-          <p className="text-2xl mt-10 mb-4">Síguenos en:</p>
-          <div className="flex justify-center space-x-10">
-            <FaInstagram className="text-4xl" aria-label="Instagram" />
-            <FaTiktok className="text-4xl" aria-label="TikTok" />
-            <FaFacebookF className="text-4xl" aria-label="Facebook" />
-            <FaLinkedinIn className="text-4xl" aria-label="LinkedIn" />
+          <p className="text-lg sm:text-xl md:text-2xl mt-6 mb-4">Síguenos en:</p>
+          <div className="flex justify-center space-x-6 sm:space-x-8 md:space-x-10">
+            <FaInstagram className="text-3xl sm:text-4xl md:text-4xl" aria-label="Instagram" />
+            <FaTiktok className="text-3xl sm:text-4xl md:text-4xl" aria-label="TikTok" />
+            <FaFacebookF className="text-3xl sm:text-4xl md:text-4xl" aria-label="Facebook" />
+            <FaLinkedinIn className="text-3xl sm:text-4xl md:text-4xl" aria-label="LinkedIn" />
           </div>
         </div>
       </section>

@@ -5,7 +5,7 @@ const deportes = [
   { nombre: "Baloncesto", color: "border-orange-500", imagen: "./../assets/basket.png" },
   { nombre: "Hockey", color: "border-yellow-500", imagen: "./../assets/hockey.webp" },
   { nombre: "Fútbol sala", color: "border-blue-500", imagen: "./../assets/futsal.png" },
-  { nombre: "Voleibol", color: "border-pink-500", imagen: "./../assets/voliebol.png" },
+  { nombre: "Voleibol", color: "border-pink-500", imagen: "./../assets/voleibol.png" },
   { nombre: "Balonmano", color: "border-purple-600", imagen: "./../assets/balonmano.png" },
 ];
 
@@ -28,7 +28,7 @@ export default function DeportesSlider() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const maxScroll = 500; // px for full effect
+      const maxScroll = 500;
       const scrollY = window.scrollY;
       const newScale = Math.min(1, 0.8 + (scrollY / maxScroll) * 0.2);
       setScale(newScale);
@@ -57,12 +57,14 @@ export default function DeportesSlider() {
       <button
         onClick={anterior}
         className="absolute left-8 text-5xl text-white z-20"
+        aria-label="Anterior deporte"
       >
         &lt;
       </button>
       <button
         onClick={siguiente}
         className="absolute right-8 text-5xl text-white z-20"
+        aria-label="Siguiente deporte"
       >
         &gt;
       </button>

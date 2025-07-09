@@ -56,9 +56,9 @@ export default function Home() {
     <>
       <Navbar />
       <DeportesSlider />
-      <main className="relative w-full overflow-y-scroll h-screen snap-y snap-mandatory">
+      <main className="relative w-full overflow-y-auto min-h-screen snap-y snap-mandatory">
         {sections.map((section, index) => (
-          <div key={index} className="relative w-full h-screen snap-start">
+          <div key={index} className="relative w-full min-h-screen snap-start flex flex-col justify-center px-4 sm:px-8 lg:px-20">
             <TalentIntroSection
               title={section.title}
               text={section.text}
