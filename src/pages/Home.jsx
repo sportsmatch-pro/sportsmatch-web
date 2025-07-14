@@ -58,7 +58,7 @@ export default function Home() {
       <DeportesSlider />
       <main className="relative w-full overflow-y-auto min-h-screen snap-y snap-mandatory">
         {sections.map((section, index) => (
-          <div key={index} className="relative w-full min-h-screen snap-start flex flex-col justify-center px-4 sm:px-8 lg:px-20">
+          <div key={index} className="relative w-full min-h-screen snap-start flex flex-col justify-center px-0 sm:px-0 lg:px-0">
             <TalentIntroSection
               title={section.title}
               text={section.text}
