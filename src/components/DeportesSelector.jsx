@@ -17,7 +17,7 @@ function DeportesSelector() {
 
   return (
     <section className="snap-center snap-mandatory w-screen min-h-screen flex flex-col items-center justify-center bg-white">
-      <BaseSectionTitle>{t("Which is your sport?")}</BaseSectionTitle>
+      <BaseSectionTitle className="mt-12">{t("Which is your sport?")}</BaseSectionTitle>
 
       <BaseParagraph>
         {t("SPORTSMATCH allows you to register in one of these 6 sports.", {
@@ -25,7 +25,7 @@ function DeportesSelector() {
         })}
       </BaseParagraph>
 
-      <div className="flex flex-wrap justify-center gap-12">
+      <div className="grid grid-cols-2 gap-8 sm:flex sm:flex-wrap sm:justify-center sm:gap-12">
         {deportes.map((deporte) => (
           <BaseDeporteCard
             key={deporte.nombre}

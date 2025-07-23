@@ -1,12 +1,14 @@
 import { useState, useEffect } from "react";
+import LogoIcon from './icons/logoIcon';
+import BaseCarouselButton from './base/BaseCarouselButton';
 
 const deportes = [
-  { nombre: "Fútbol", color: "border-green-500", imagen: "./../assets/futbol.png" },
-  { nombre: "Baloncesto", color: "border-orange-500", imagen: "./../assets/basket.png" },
-  { nombre: "Hockey", color: "border-yellow-500", imagen: "./../assets/hockey.webp" },
-  { nombre: "Fútbol sala", color: "border-blue-500", imagen: "./../assets/futsal.png" },
-  { nombre: "Voleibol", color: "border-pink-500", imagen: "./../assets/voleibol.png" },
-  { nombre: "Balonmano", color: "border-purple-600", imagen: "./../assets/balonmano.png" },
+  { nombre: "Fútbol", colorPart1: "#22c55e", colorPart2: "#a7f3d0", imagen: "./../assets/futbol.png" },
+  { nombre: "Baloncesto", colorPart1: "#f97316", colorPart2: "#fed7aa", imagen: "./../assets/basket.png" },
+  { nombre: "Hockey", colorPart1: "#eab308", colorPart2: "#fef3c7", imagen: "./../assets/hockey.png" },
+  { nombre: "Fútbol sala", colorPart1: "#3b82f6", colorPart2: "#bfdbfe", imagen: "./../assets/futsal.png" },
+  { nombre: "Voleibol", colorPart1: "#ec4899", colorPart2: "#fbcfe8", imagen: "./../assets/voleibol.png" },
+  { nombre: "Balonmano", colorPart1: "#7c3aed", colorPart2: "#ddd6fe", imagen: "./../assets/balonmano.png" },
 ];
 
 export default function DeportesSlider() {
@@ -53,21 +55,35 @@ export default function DeportesSlider() {
         />
       )}
 
+
+      <div className="absolute left-24 top-1/2 transform -translate-y-1/2 text-white text-4xl max-w-lg z-30">
+        Únete a la primera red social del mercado que conecta jugador@s y profesionales del deporte con clubes deportivos
+      </div>
+      <div className="absolute bottom-8 right-8 text-white text-7xl z-30">
+        {actual.nombre}
+      </div>
+
+      {/* LogoIcon block, z-20 so it's above bg image but below text */}
+      <div className="absolute inset-0 flex justify-center items-center z-20 animate-pulse-strong">
+        <LogoIcon
+          width={1000}
+          height={1000}
+          color={actual.colorPart1}
+          secondaryColor={actual.colorPart2}
+        />
+      </div>
+
       {/* Arrows on sides */}
-      <button
+      <BaseCarouselButton
+        direction="left"
         onClick={anterior}
-        className="absolute left-8 text-5xl text-white z-20"
-        aria-label="Anterior deporte"
-      >
-        &lt;
-      </button>
-      <button
+        className="absolute left-8 z-30"
+      />
+      <BaseCarouselButton
+        direction="right"
         onClick={siguiente}
-        className="absolute right-8 text-5xl text-white z-20"
-        aria-label="Siguiente deporte"
-      >
-        &gt;
-      </button>
+        className="absolute right-8 z-30"
+      />
     </div>
   );
 }

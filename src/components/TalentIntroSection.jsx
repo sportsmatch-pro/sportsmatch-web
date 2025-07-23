@@ -15,15 +15,17 @@ function Section1(props) {
   const textClass = props.textColor === "white" ? "text-white" : "text-black";
 
   return (
-    <section className={`${bgClass} w-screen h-screen flex items-center justify-center`}>
-      <div className={`flex ${flexDirection} w-full h-full`}>
-        <div className="w-1/2 h-full p-8 flex flex-col justify-start">
-          <div className={`${textClass} ${props.title === "your dream, within reach" ? "text-center" : ""}`}>
-            <h2 className={`text-6xl font-bold mb-12 ${props.title === "your dream, within reach" ? "text-center" : ""}`}>{props.title}</h2>
+    <section className={`${bgClass} w-screen lg:h-screen lg:flex items-center justify-center`}>
+      <div className={`lg:flex ${flexDirection} w-full lg:h-full`}>
+        <div className="lg:w-1/2 h-full p-8 flex flex-col justify-between">
+          <div className={`${textClass} ${props.title === "your dream, within reach" ? "text-center" : ""} px-8 py-12`}>
+            <h2 className={`text-6xl mb-12 whitespace-pre-line ${props.title === "your dream, within reach" ? "text-center" : ""}`}>
+              {props.title}
+            </h2>
             <p className={`text-3xl mt-4 ${props.title === "your dream, within reach" ? "text-center" : "text-left"}`}>{props.text}</p>
           </div>
         </div>
-        <div className="w-1/2 h-full relative overflow-hidden">
+        <div className="lg:w-1/2 h-full relative overflow-hidden">
           <img src={new URL(props.images[current], import.meta.url).href} alt="carousel" className="w-full h-full object-cover" />
           <BaseCarouselButton direction="left" onClick={prev} />
           <BaseCarouselButton direction="right" onClick={next} />

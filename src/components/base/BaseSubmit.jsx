@@ -1,8 +1,8 @@
-function BaseSubmit({ label}) {
+function BaseSubmit({ label, className = "" }) {
     return (
         <button
             type="submit"
-            className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 rounded-md transition-colors"
+            className={`bg-gray-500 hover:bg-gray-600 text-white font-semibold px-6 py-2 rounded-md transition-colors inline-block w-fit ${className}`}
         >
             {label}
         </button>

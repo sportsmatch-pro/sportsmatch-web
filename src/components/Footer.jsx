@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next';
-import logoFooter from '../assets/logofooter.png';
+import LogoIcon from './icons/logoIcon';
 
 const Footer = () => {
   const { t } = useTranslation();
@@ -21,19 +21,10 @@ const Footer = () => {
             className="h-12"
           />
           <span className="text-3xl">+34 689 47 22 60</span>
-          <img
-            src="https://img.icons8.com/ios-filled/60/ffffff/technical-support.png"
-            alt={t('Support')}
-            className="h-12"
-          />
+         
         </div>
         <div className="mx-auto mb-12 inline-block p-4 rounded-lg bg-[#2e2e2e]">
-          <img
-            src={logoFooter}
-            alt={t('SportsMatch Logo')}
-            className="h-32 opacity-90"
-            style={{ filter: 'brightness(1) contrast(1)' }}
-          />
+        <LogoIcon width={200} height={90} color="#808080" />
         </div>
         <div className="flex justify-center space-x-12 text-lg mb-6">
           <a href="#" className="hover:underline">{t('Legal notice')}</a>

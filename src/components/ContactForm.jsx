@@ -9,72 +9,93 @@ import BaseSubmit from './base/BaseSubmit';
 function Contactform({ className }) {
   const { t } = useTranslation();
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [status, setStatus] = useState(null); 
 
   const handleSubmit = (e) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setStatus(null);
 
-    // Aquí podrías añadir la lógica de envío real, por ejemplo fetch o axios
-
-    setTimeout(() => {
-      setIsSubmitting(false);
-      // mostrar mensaje de éxito o manejar errores
-    }, 2000);
+    fetch('/contact', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        name: e.target.name.value,
+        email: e.target.email.value,
+        phone: e.target.phone.value,
+        message: e.target.message.value,
+      }),
+    })
+      .then((res) => {
+        if (!res.ok) throw new Error('Failed to send');
+        setStatus('success');
+      })
+      .catch(() => setStatus('error'))
+      .finally(() => setIsSubmitting(false));
   };
 
   return (
-    <form action="/contact" method="POST" className={className} noValidate onSubmit={handleSubmit}>
-      <BaseInput
-        type="text"
-        name="name"
-        placeholder={t('Name')}
-        aria-label={t('Name')}
-        required
-      />
-      <BaseInput
-        type="email"
-        name="email"
-        placeholder={t('Email')}
-        aria-label={t('Email')}
-        required
-      />
-      <BaseInput
-        type="tel"
-        name="phone"
-        placeholder={t('Phone')}
-        aria-label={t('Phone')}
-      />
-      <BaseTextarea
-        name="message"
-        placeholder={t('Message')}
-        aria-label={t('Message')}
-        required
-      />
-
-      <fieldset className="mb-4 border-0 p-0">
-        <legend className="sr-only">{t('Legal Agreement')}</legend>
-        <BaseCheckbox
-          name="legal"
-          label={
-            <Trans
-              i18nKey="I agree to the <privacy>Privacy Policy</privacy>."
-              components={{
-                privacy: (
-                  <Link
-                    to={t('/en/privacy-policy')}
-                    style={{ textDecoration: 'underline' }}
-                    aria-label={t('Privacy Policy')}
-                  />
-                ),
-              }}
+    <section className="w-screen min-h-screen flex items-center justify-center">
+      <div className="bg-white bg-opacity-10 p-12 rounded-3xl w-full max-w-4xl">
+        <form action="/contact" method="POST" className={className} noValidate onSubmit={handleSubmit}>
+          <BaseInput
+            type="text"
+            name="name"
+            placeholder={t('Name')}
+            aria-label={t('Name')}
+            required
+          />
+          <BaseInput
+            type="email"
+            name="email"
+            placeholder={t('Email')}
+            aria-label={t('Email')}
+            required
+          />
+          <BaseInput
+            type="tel"
+            name="phone"
+            placeholder={t('Phone')}
+            aria-label={t('Phone')}
+          />
+          <BaseTextarea
+            name="message"
+            placeholder={t('Message')}
+            aria-label={t('Message')}
+            required
+          />
+          <fieldset className="mb-4 border-0 p-0">
+            <legend className="sr-only">{t('Legal Agreement')}</legend>
+            <BaseCheckbox
+              name="legal"
+              label={
+                <Trans
+                  i18nKey="I agree to the <privacy>Privacy Policy</privacy>."
+                  components={{
+                    privacy: (
+                      <Link
+                        to={t('/en/privacy-policy')}
+                        style={{ textDecoration: 'underline' }}
+                        aria-label={t('Privacy Policy')}
+                      />
+                    ),
+                  }}
+                />
+              }
+              required
+              className="bg-transparent"
             />
-          }
-          required
-        />
-      </fieldset>
-
-      <BaseSubmit label={t('Send')} disabled={isSubmitting} />
-    </form>
+          </fieldset>
+          <BaseSubmit
+            label={t('Send')}
+            disabled={isSubmitting}
+            className="bg-gray-600 text-white text-2xl font-normal px-48 py-4 rounded-[9999px] hover:bg-gray-700 transition mx-auto block"
+          />
+          {status === 'success' && <p className="text-green-600 mt-2">{t('Message sent successfully!')}</p>}
+          {status === 'error' && <p className="text-red-600 mt-2">{t('There was an error sending your message.')}</p>}
+        </form>
+      </div>
+    </section>
   );
 }
 
