@@ -35,8 +35,8 @@ function Contactform({ className }) {
   };
 
   return (
-    <section className="w-screen min-h-screen flex items-center justify-center">
-      <div className="bg-white bg-opacity-10 p-12 rounded-3xl w-full max-w-4xl">
+    <section className="w-screen min-h-screen flex items-center justify-center pt-0">
+      <div className="bg-white bg-opacity-10 p-6 rounded-3xl w-full max-w-4xl">
         <form action="/contact" method="POST" className={className} noValidate onSubmit={handleSubmit}>
           <BaseInput
             type="text"
@@ -89,7 +89,7 @@ function Contactform({ className }) {
           <BaseSubmit
             label={t('Send')}
             disabled={isSubmitting}
-            className="bg-gray-600 text-white text-2xl font-normal px-48 py-4 rounded-[9999px] hover:bg-gray-700 transition mx-auto block"
+            className="bg-gray-600 text-white text-lg font-normal px-12 py-2 rounded-full hover:bg-gray-700 transition mx-auto block"
           />
           {status === 'success' && <p className="text-green-600 mt-2">{t('Message sent successfully!')}</p>}
           {status === 'error' && <p className="text-red-600 mt-2">{t('There was an error sending your message.')}</p>}

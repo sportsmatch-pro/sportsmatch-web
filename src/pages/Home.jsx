@@ -83,7 +83,9 @@ export default function Home() {
           <DeportesSelector />
         </div>
       </main>
-      <SectionContactForm />
+      <div className="mt-[-50px]">
+        <SectionContactForm />
+      </div>
       <DownloadAppSection />
       <Footer />
     </>

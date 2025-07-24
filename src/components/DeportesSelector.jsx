@@ -17,9 +17,9 @@ function DeportesSelector() {
 
   return (
     <section className="snap-center snap-mandatory w-screen min-h-screen flex flex-col items-center justify-center bg-white">
-      <BaseSectionTitle className="mt-12">{t("Which is your sport?")}</BaseSectionTitle>
+      <BaseSectionTitle className="mt-48 mb-2">{t("Which is your sport?")}</BaseSectionTitle>
 
-      <BaseParagraph>
+      <BaseParagraph className="mt-[-12px]">
         {t("SPORTSMATCH allows you to register in one of these 6 sports.", {
           strong: (chunks) => <span className="font-bold">{chunks}</span>,
         })}
@@ -36,7 +36,7 @@ function DeportesSelector() {
         ))}
       </div>
 
-      <BaseParagraph className="mt-32 text-5xl font-bold max-w-3xl text-center">
+      <BaseParagraph className="mt-12 text-5xl font-bold max-w-3xl text-center">
         {t("Download the app and start your journey.")}
       </BaseParagraph>
     </section>
