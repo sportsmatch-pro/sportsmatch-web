@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next';
-import LogoIcon from './icons/logoIcon';
+import LogoIcon from './icons/LogoIcon';
 
 const Footer = () => {
   const { t } = useTranslation();
