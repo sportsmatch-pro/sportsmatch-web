@@ -5,7 +5,7 @@ function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   return (
     <>
-    <header className="bg-white shadow-sm hidden lg:block">
+    <header className="bg-white shadow-sm hidden lg:block fixed top-0 left-0 w-full z-50">
       <div className="w-full px-4 py-6 flex items-center justify-between">
         <div className="flex-1 flex items-center space-x-6 text-base text-gray-800 justify-start ml-0">
           <a href="#" className="hover:underline">Tu sueño, a tu alcance</a>

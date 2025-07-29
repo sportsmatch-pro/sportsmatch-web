@@ -7,6 +7,7 @@ import TalentIntroSection from './../components/TalentIntroSection.jsx';
 import Footer from './../components/Footer';
 import SectionContactForm from '../components/SectionContactForm';
 import DownloadAppSection from '../components/DownloadAppSection';
+import PromoVideo from '../components/PromoVideo.jsx';
 
 export default function Home() {
   const { t } = useTranslation();
@@ -53,16 +54,7 @@ export default function Home() {
     <>
       <Navbar />
       <DeportesSlider />
-      <section className="w-screen min-h-screen bg-black flex items-center justify-center">
-        <video
-          src="/assets/videosport.mp4"
-          className="w-full h-full object-cover"
-          autoPlay
-          loop
-          muted
-          playsInline
-        />
-      </section>
+      <PromoVideo />
       <main className="relative w-full overflow-y-auto min-h-screen snap-y snap-mandatory">
         {sections.map((section, index) => (
           <div key={index} className="relative w-full min-h-screen snap-start flex flex-col justify-center px-0 sm:px-0 lg:px-0">

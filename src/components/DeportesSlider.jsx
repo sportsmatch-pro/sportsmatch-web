@@ -13,7 +13,6 @@ const deportes = [
 
 export default function DeportesSlider() {
   const [index, setIndex] = useState(0);
-  const [scale, setScale] = useState(0.8);
 
   const siguiente = () => {
     setIndex((prev) => (prev + 1) % deportes.length);
@@ -28,16 +27,6 @@ export default function DeportesSlider() {
     return () => clearInterval(interval);
   }, []);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const maxScroll = 500;
-      const scrollY = window.scrollY;
-      const newScale = Math.min(1, 0.8 + (scrollY / maxScroll) * 0.2);
-      setScale(newScale);
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
 
   const actual = deportes[index];
 
@@ -48,7 +37,6 @@ export default function DeportesSlider() {
           src={actual.imagen}
           alt={actual.nombre}
           style={{
-            transform: `scale(${scale})`,
             transition: "transform 0.1s ease-out",
           }}
           className="absolute inset-0 w-full h-full object-cover"
@@ -66,10 +54,10 @@ export default function DeportesSlider() {
       {/* LogoIcon block, z-20 so it's above bg image but below text */}
       <div className="absolute inset-0 flex justify-center items-center z-20 animate-pulse-strong">
         <LogoIcon
-          width={1000}
-          height={1000}
+          width={600}
+          height={600}
           color={actual.colorPart1}
-          secondaryColor={actual.colorPart2}
+          secondaryColor="#ffffff"
         />
       </div>
 

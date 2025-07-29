@@ -24,7 +24,7 @@ const Footer = () => {
          
         </div>
         <div className="mx-auto mb-12 inline-block p-4 rounded-lg bg-[#2e2e2e]">
-        <LogoIcon width={200} height={90} color="#808080" />
+        <LogoIcon width={200} height={90} color="#808080" secondaryColor="#ffffff" />
         </div>
         <div className="flex justify-center space-x-12 text-lg mb-6">
           <a href="#" className="hover:underline">{t('Legal notice')}</a>
