@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import LogoIcon from './icons/logoIcon';
+import LogoIcon from './icons/LogoIcon';
 import BaseCarouselButton from './base/BaseCarouselButton';
 
 const deportes = [
