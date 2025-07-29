@@ -7,7 +7,6 @@ import TalentIntroSection from './../components/TalentIntroSection.jsx';
 import Footer from './../components/Footer';
 import SectionContactForm from '../components/SectionContactForm';
 import DownloadAppSection from '../components/DownloadAppSection';
-import videoSport from './../assets/videosport.mp4';
 
 export default function Home() {
   const { t } = useTranslation();
@@ -23,9 +22,9 @@ export default function Home() {
         </>
       ),
       images: [
-        "./../assets/futsal1.png",
-        "./../assets/volei1.png",
-        "./../assets/balonmano1.png"
+        "/assets/futsal1.png",
+        "/assets/volei1.png",
+        "/assets/balonmano1.png"
       ],
       imagePosition: 'right',
       background: 'white',
@@ -40,9 +39,9 @@ export default function Home() {
         </>
       ),
       images: [
-        "./../assets/futbol1.png",
-        "./../assets/basket1.png",
-        "./../assets/hockey1.png"
+        "/assets/futbol1.png",
+        "/assets/basket1.png",
+        "/assets/hockey1.png"
       ],
       imagePosition: 'left',
       background: 'black',
@@ -56,7 +55,7 @@ export default function Home() {
       <DeportesSlider />
       <section className="w-screen min-h-screen bg-black flex items-center justify-center">
         <video
-          src={videoSport}
+          src="/assets/videosport.mp4"
           className="w-full h-full object-cover"
           autoPlay
           loop

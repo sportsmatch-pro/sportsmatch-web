@@ -3,12 +3,12 @@ import LogoIcon from './icons/logoIcon';
 import BaseCarouselButton from './base/BaseCarouselButton';
 
 const deportes = [
-  { nombre: "Fútbol", colorPart1: "#22c55e", colorPart2: "#a7f3d0", imagen: "./../assets/futbol.png" },
-  { nombre: "Baloncesto", colorPart1: "#f97316", colorPart2: "#fed7aa", imagen: "./../assets/basket.png" },
-  { nombre: "Hockey", colorPart1: "#eab308", colorPart2: "#fef3c7", imagen: "./../assets/hockey.png" },
-  { nombre: "Fútbol sala", colorPart1: "#3b82f6", colorPart2: "#bfdbfe", imagen: "./../assets/futsal.png" },
-  { nombre: "Voleibol", colorPart1: "#ec4899", colorPart2: "#fbcfe8", imagen: "./../assets/voleibol.png" },
-  { nombre: "Balonmano", colorPart1: "#7c3aed", colorPart2: "#ddd6fe", imagen: "./../assets/balonmano.png" },
+  { nombre: "Fútbol", colorPart1: "#22c55e", colorPart2: "#a7f3d0", imagen: "/assets/futbol.png" },
+  { nombre: "Baloncesto", colorPart1: "#f97316", colorPart2: "#fed7aa", imagen: "/assets/basket.png" },
+  { nombre: "Hockey", colorPart1: "#eab308", colorPart2: "#fef3c7", imagen: "/assets/hockey.png" },
+  { nombre: "Fútbol sala", colorPart1: "#3b82f6", colorPart2: "#bfdbfe", imagen: "/assets/futsal.png" },
+  { nombre: "Voleibol", colorPart1: "#ec4899", colorPart2: "#fbcfe8", imagen: "/assets/voleibol.png" },
+  { nombre: "Balonmano", colorPart1: "#7c3aed", colorPart2: "#ddd6fe", imagen: "/assets/balonmano.png" },
 ];
 
 export default function DeportesSlider() {
@@ -45,7 +45,7 @@ export default function DeportesSlider() {
     <div className="relative h-screen w-full overflow-hidden flex items-center justify-center bg-black">
       {actual.imagen && (
         <img
-          src={new URL(actual.imagen, import.meta.url).href}
+          src={actual.imagen}
           alt={actual.nombre}
           style={{
             transform: `scale(${scale})`,

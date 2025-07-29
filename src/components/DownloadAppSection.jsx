@@ -1,5 +1,4 @@
 import { useTranslation } from "react-i18next";
-import section4Bg from "./../assets/section4-bg.jpg";
 import {
   FaApple,
   FaGooglePlay,
@@ -16,14 +15,14 @@ export default function DownloadAppSection() {
     <section
       aria-label={t("Download app and social media links")}
       className="relative w-full bg-cover bg-center"
-      style={{ backgroundImage: `url(${section4Bg})` }}
+      style={{ backgroundImage: `url("/assets/section4-bg.jpg")` }}
     >
       {/* Blurred dark background */}
       <div
         aria-hidden="true"
         tabIndex={-1}
         className="absolute inset-0 bg-cover bg-center bg-no-repeat filter blur-lg brightness-75"
-        style={{ backgroundImage: `url(${section4Bg})` }}
+        style={{ backgroundImage: `url("/assets/section4-bg.jpg")` }}
       />
 
       {/* Main content */}

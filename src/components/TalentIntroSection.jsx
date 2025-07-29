@@ -26,7 +26,7 @@ function Section1(props) {
           </div>
         </div>
         <div className="lg:w-1/2 h-full relative overflow-hidden">
-          <img src={new URL(props.images[current], import.meta.url).href} alt="carousel" className="w-full h-full object-cover" />
+          <img src={props.images[current]} alt="carousel" className="w-full h-full object-cover" />
           <BaseCarouselButton direction="left" onClick={prev} />
           <BaseCarouselButton direction="right" onClick={next} />
         </div>

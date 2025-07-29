@@ -7,12 +7,12 @@ function DeportesSelector() {
   const { t } = useTranslation();
 
   const deportes = [
-    { nombre: "Fútbol", color: "border-green-500", imagen: new URL("./../assets/futbolsection2.png", import.meta.url).href },
-    { nombre: "Baloncesto", color: "border-orange-500", imagen: new URL("./../assets/basketsection2.png", import.meta.url).href },
-    { nombre: "Hockey", color: "border-yellow-500", imagen: new URL("./../assets/hockeysection2.png", import.meta.url).href },
-    { nombre: "Fútbol sala", color: "border-blue-500", imagen: new URL("./../assets/futbolsalasection2.png", import.meta.url).href },
-    { nombre: "Voleibol", color: "border-pink-500", imagen: new URL("./../assets/voleibolsection2.png", import.meta.url).href },
-    { nombre: "Balonmano", color: "border-purple-600", imagen: new URL("./../assets/balonmanosection2.png", import.meta.url).href },
+    { nombre: "Fútbol", color: "border-green-500", imagen: "/assets/futbolsection2.png" },
+    { nombre: "Baloncesto", color: "border-orange-500", imagen: "/assets/basketsection2.png" },
+    { nombre: "Hockey", color: "border-yellow-500", imagen: "/assets/hockeysection2.png" },
+    { nombre: "Fútbol sala", color: "border-blue-500", imagen: "/assets/futbolsalasection2.png" },
+    { nombre: "Voleibol", color: "border-pink-500", imagen: "/assets/voleibolsection2.png" },
+    { nombre: "Balonmano", color: "border-purple-600", imagen: "/assets/balonmanosection2.png" },
   ];
 
   return (

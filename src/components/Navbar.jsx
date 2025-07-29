@@ -2,7 +2,6 @@ import { useState } from "react";
 import LanguageSelector from "./languageSelector";
 
 function Navbar() {
-  const logo = new URL("./../assets/logo.png", import.meta.url).href;
   const [menuOpen, setMenuOpen] = useState(false);
   return (
     <>
@@ -14,7 +13,7 @@ function Navbar() {
         </div>
 
         <div className="flex justify-center flex-shrink-0">
-          <img src={logo} alt="SportsMatch Logo" className="h-12" />
+          <img src="/assets/logo.png" alt="SportsMatch Logo" className="h-12" />
         </div>
 
         <div className="flex-1 flex items-center justify-end space-x-4 text-base mr-4">
@@ -26,7 +25,7 @@ function Navbar() {
     </header>
     <header className="bg-white shadow-sm lg:hidden">
       <div className="w-full px-4 py-4 flex items-center justify-between">
-        <img src={logo} alt="SportsMatch Logo" className="h-10" />
+        <img src="/assets/logo.png" alt="SportsMatch Logo" className="h-10" />
 
         <div className="flex items-center space-x-4">
           <LanguageSelector />
